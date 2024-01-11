@@ -15,7 +15,7 @@ namespace BusinessAccessLayer.Implementation
         #region Constructors
 
         public UserService(IUserRepository userRepository,
-            IUnitOfWork unitOfWork,
+            IUnitOfWork unitOfWork
           )
             : base(userRepository, unitOfWork)
         {
