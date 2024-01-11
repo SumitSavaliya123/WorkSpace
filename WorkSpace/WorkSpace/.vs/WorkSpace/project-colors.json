@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5c76e353-25cb-4ff6-b608-2f6b2fbcaf89": {
+      "ProjectGuid": "5c76e353-25cb-4ff6-b608-2f6b2fbcaf89",
+      "DisplayName": "WorkSpaceAPI",
+      "ColorIndex": 0
+    },
+    "4b681626-b55d-45a7-86ff-aa6542e8fb7c": {
+      "ProjectGuid": "4b681626-b55d-45a7-86ff-aa6542e8fb7c",
+      "DisplayName": "Entities",
+      "ColorIndex": 1
+    },
+    "908c774d-8e9c-49b0-aea9-b431ab5c4d72": {
+      "ProjectGuid": "908c774d-8e9c-49b0-aea9-b431ab5c4d72",
+      "DisplayName": "DataAccessLayer",
+      "ColorIndex": 2
+    },
+    "554eb8d4-0da9-4dab-9360-5539ed8f0f4b": {
+      "ProjectGuid": "554eb8d4-0da9-4dab-9360-5539ed8f0f4b",
+      "DisplayName": "BusinessAccessLayer",
+      "ColorIndex": 3
+    },
+    "e79d53ff-3aed-45de-842a-3c070b358400": {
+      "ProjectGuid": "e79d53ff-3aed-45de-842a-3c070b358400",
+      "DisplayName": "Common",
+      "ColorIndex": 4
+    },
+    "ace0417a-0de5-4033-94b7-4a281c5a5c4b": {
+      "ProjectGuid": "ace0417a-0de5-4033-94b7-4a281c5a5c4b",
+      "DisplayName": "WorkSpaceClient",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}

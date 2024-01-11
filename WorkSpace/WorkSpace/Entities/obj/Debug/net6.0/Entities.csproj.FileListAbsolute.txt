@@ -1,0 +1,17 @@
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\bin\Debug\net6.0\Entities.deps.json
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\bin\Debug\net6.0\Entities.dll
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\bin\Debug\net6.0\ref\Entities.dll
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\bin\Debug\net6.0\Entities.pdb
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\bin\Debug\net6.0\Common.dll
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\bin\Debug\net6.0\Common.pdb
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\obj\Debug\net6.0\Entities.csproj.AssemblyReference.cache
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\obj\Debug\net6.0\Entities.AssemblyInfoInputs.cache
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\obj\Debug\net6.0\Entities.AssemblyInfo.cs
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\obj\Debug\net6.0\Entities.csproj.CoreCompileInputs.cache
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\obj\Debug\net6.0\Entities.csproj.CopyComplete
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\obj\Debug\net6.0\Entities.dll
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\obj\Debug\net6.0\ref\Entities.dll
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\obj\Debug\net6.0\Entities.pdb
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\bin\Debug\net6.0\Entities.runtimeconfig.json
+D:\WorkSpace\WorkSpace\WorkSpace\Entities\obj\Debug\net6.0\Entities.genruntimeconfig.cache
