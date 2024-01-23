@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "nQJMAxKRGEyzFGOP9Xf9SNPETU9PF/QZ2KZwc94DbHBo8BPL/JC35hUb/IhCbReNx+uc7j5AhrfSC9fSo6uCWA==",
+  "dgSpecHash": "bu74zMNFOpWAawJWZEITjNYQVJfB8Sm83WHKqRHWI9uVfFZ4wZUCqtftcuDVTTQEHOTUSSYz+GExYvqk2u8Xnw==",
   "success": true,
   "projectFilePath": "D:\\WorkSpace\\WorkSpace\\WorkSpace\\WorkSpaceClient\\WorkSpaceClient.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\tatva\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\tatva\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
+    "C:\\Users\\tatva\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\tatva\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,23 +1,13 @@
 ﻿using BusinessAccessLayer.Abstraction;
 using BusinessAccessLayer.Implementation;
-using BusinessAccessLayer.Profiles;
-using BusinessAccessLayer.Validators;
 using Common.Constants;
 using DataAccessLayer.Abstraction;
 using DataAccessLayer.Data;
 using DataAccessLayer.Implementation;
 using Entities.DTOs.Request;
-using FluentValidation;
-using GenandoAPI.ExtAuthorization;
-using GenandoAPI.Filters;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
-using System.Text;
 
-namespace GenandoAPI.Extensions;
+namespace WorkSpaceAPI.Extensions;
 
 public static class ApplicationConfiguration
 {
@@ -41,6 +31,7 @@ public static class ApplicationConfiguration
     {
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IAuthenticationService, AuthenticationService>();
+        services.AddScoped<IJwtManageService, JwtManageService>();
 
     }
 
@@ -62,6 +53,13 @@ public static class ApplicationConfiguration
             options.PayloadSerializerOptions.PropertyNamingPolicy = null; // Customize JSON serialization if needed
         });
     }
+
+    public static void RegisterMail(this IServiceCollection services, IConfiguration config)
+    {
+        services.Configure<MailSettingDto>(config.GetSection("MailSettings"));
+        services.AddScoped<IMailService, MailService>();
+    }
+
     public static void SetRequestBodySize(this IServiceCollection services)
     {
         services.Configure<IISServerOptions>(options =>

@@ -87,3 +87,15 @@ D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\obj\Debug\net6.0\WorkSpaceAPI.dll
 D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\obj\Debug\net6.0\ref\WorkSpaceAPI.dll
 D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\obj\Debug\net6.0\WorkSpaceAPI.pdb
 D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\obj\Debug\net6.0\WorkSpaceAPI.genruntimeconfig.cache
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\obj\Debug\net6.0\WorkSpaceAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\bin\Debug\net6.0\FluentValidation.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\bin\Debug\net6.0\MailKit.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\bin\Debug\net6.0\MimeKit.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\bin\Debug\net6.0\System.Formats.Asn1.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll

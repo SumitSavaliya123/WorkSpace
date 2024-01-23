@@ -36,7 +36,23 @@ namespace Entities.DataModels
         [Column("role")]
         public byte Role { get; set; }
 
+        [Column("gender")]
+        public byte? Gender { get; set; }
+
+        [Column("avatar")]
+        public byte[]? Avatar { get; set; }
+
+        [MaxLength(6)]
+        [Column("otp", TypeName = "varchar")]
+        public string? OTP { get; set; }
+
+        [Column("expiry_time")]
+        public DateTimeOffset? ExpiryTime { get; set; }
+
         [Column("status")]
         public byte Status { get; set; }
+
+        [ForeignKey(nameof(Gender))]
+        public virtual Gender Genders { get; set; } = null!;
     }
 }

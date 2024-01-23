@@ -1,4 +1,6 @@
-using GenandoAPI.Extensions;
+using Common.Constants;
+using WorkSpaceAPI.Extensions;
+using WorkSpaceAPI.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,9 +19,11 @@ builder.Services.RegisterRepository();
 builder.Services.RegisterServices();
 builder.Services.ConfigureCors();
 builder.Services.SetRequestBodySize();
+builder.Services.RegisterMail(builder.Configuration);
 builder.Services.AddSignalR();
 
 var app = builder.Build();
+app.UseCors(SystemConstants.CorsPolicy);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -29,6 +33,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<ExceptionMiddleware>();
+
+app.UseRouting();
 
 app.UseAuthorization();
 

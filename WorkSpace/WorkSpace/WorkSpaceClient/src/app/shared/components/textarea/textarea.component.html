@@ -1,0 +1,37 @@
+<div class="form-group input--field" [formGroup]="parentForm">
+  <label for="textarea" class="label--style">{{ label }}</label>
+  <textarea
+    class="form-control"
+    [placeholder]="placeholder"
+    [formControl]="formControl"
+    [placeholder]="placeholder"
+    [value]="value"
+    [required]="required"
+    [pattern]="pattern"
+    [readonly]="readonly"
+    [ngClass]="ngClass"
+    [maxlength]="maxlength"
+    [minlength]="minlength"
+    [name]="name"
+    [ngStyle]="styles"
+    [rows]="rows"
+    [cols]="cols"
+  ></textarea>
+</div>
+<div
+  *ngIf="
+    parentForm.get(controlName)?.invalid && parentForm.get(controlName)?.touched
+  "
+  class="text-danger"
+>
+  <div *ngIf="parentForm.get(controlName)?.hasError('required')">
+    {{ label }} is required.
+  </div>
+  <div
+    *ngIf="parentForm.get(controlName)?.hasError('minlength') && !parentForm.get(controlName)?.errors?.['required']"
+  >
+    {{ label }} must be at least
+    {{ parentForm.get(controlName)?.errors?.['minlength']?.requiredLength }}
+    characters.
+  </div>
+</div>

@@ -115,10 +115,22 @@ namespace DataAccessLayer.Data
 
         public virtual DbSet<User> Users { get; set; }
 
+        public virtual DbSet<Gender> Genders { get; set; }
+
+        public virtual DbSet<UserRefreshTokens> UserRefreshTokens { get; set; }
+
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Gender>(entity =>
+            {
+                entity.ToTable("gender");
+                entity.Property(e => e.Title).IsRequired().HasMaxLength(20);
+                entity.HasIndex(e => e.Title).IsUnique();
+                entity.HasKey(e => e.Id).HasName("PK_Gender_Id");
+            });
+
             modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("user");
@@ -138,6 +150,23 @@ namespace DataAccessLayer.Data
                     .HasForeignKey(a => a.UpdatedBy)
                     .OnDelete(DeleteBehavior.NoAction);
             });
+
+            modelBuilder.Entity<UserRefreshTokens>(entity =>
+            {
+                entity.ToTable("userRefreshToken");
+                entity.HasIndex(e => e.Id);
+            });
+
+
+
+            #region Seed_Data
+
+            modelBuilder.Entity<Gender>().HasData(
+                 new Gender { Id = 1, Title = "Male" },
+                 new Gender { Id = 2, Title = "Female" }
+            );
+            #endregion
+
         }
 
     }
