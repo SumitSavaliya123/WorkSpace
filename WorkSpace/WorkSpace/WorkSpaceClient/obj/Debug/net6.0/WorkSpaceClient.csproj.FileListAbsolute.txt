@@ -1,0 +1,12 @@
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceClient\bin\Debug\net6.0\WorkSpaceClient.deps.json
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceClient\bin\Debug\net6.0\WorkSpaceClient.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceClient\bin\Debug\net6.0\ref\WorkSpaceClient.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceClient\bin\Debug\net6.0\WorkSpaceClient.pdb
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceClient\obj\Debug\net6.0\WorkSpaceClient.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceClient\obj\Debug\net6.0\WorkSpaceClient.AssemblyInfoInputs.cache
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceClient\obj\Debug\net6.0\WorkSpaceClient.AssemblyInfo.cs
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceClient\obj\Debug\net6.0\WorkSpaceClient.csproj.CoreCompileInputs.cache
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceClient\obj\Debug\net6.0\WorkSpaceClient.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceClient\obj\Debug\net6.0\ref\WorkSpaceClient.dll
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceClient\obj\Debug\net6.0\WorkSpaceClient.pdb
+D:\WorkSpace\WorkSpace\WorkSpace\WorkSpaceClient\obj\Debug\net6.0\WorkSpaceClient.csproj.AssemblyReference.cache
