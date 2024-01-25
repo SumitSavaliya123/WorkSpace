@@ -8,5 +8,9 @@ export class ApiCallConstants{
 
     //Authentication
      public static readonly LOGIN_URL = this.AREA_AUTHENTICATION  + '/login';
+     public static readonly VERIFY_OTP_URL =this.AREA_AUTHENTICATION + '/verify-otp';
+     public static readonly RESEND_OTP_URL =this.AREA_AUTHENTICATION + '/resend-otp';
+     public static readonly FORGOT_PASSWORD_URL = this.AREA_AUTHENTICATION + '/forgot-password';
+     public static readonly RESET_PASSWORD_URL = this.AREA_AUTHENTICATION + '/reset-password';
 
 }

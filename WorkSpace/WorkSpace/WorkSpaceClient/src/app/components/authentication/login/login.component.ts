@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     this.loginForm.markAllAsTouched();
-    if(!this.loginForm.invalid)
+    if(this.loginForm.valid)
     this._loginService.login(<ILoginInterface>this.loginForm.value)
   }
 

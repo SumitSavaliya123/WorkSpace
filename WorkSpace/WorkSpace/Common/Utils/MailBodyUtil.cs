@@ -101,5 +101,26 @@ namespace Common.Utils
 
             return CreateMessage(body);
         }
+
+        public static string SendResetPasswordLink(string link)
+        {
+            string body = $@"
+             <div class='email-container'>
+                <div class='email-header'>
+                  <h1>Welcome to Our Community!</h1>
+                </div>
+                <div class='email-content'>
+                  <p>Dear User,</p>
+                  <p>Here is link for resetting your account password and it is valid for 10 minutes only:</p>
+                  <ul>
+                    <li>{link}</li>
+                  </ul>
+                  <p>Thank you for using our service !</p>
+                </div>
+              </div>";
+
+
+            return CreateMessage(body);
+        }
     }
 }

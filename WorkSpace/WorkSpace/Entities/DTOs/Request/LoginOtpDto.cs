@@ -19,4 +19,15 @@ namespace Entities.DTOs.Request
         public string AccessToken { get; set; } = null!;
         public string RefreshToken { get; set; } = null!;
     }
+
+    public class LoginEmailDto : BaseValidationModel<LoginEmailDto>
+    {
+        public string Email { get; set; } = null!;
+    }
+
+    public class ResetPasswordDto : BaseValidationModel<ResetPasswordDto>
+    {
+        public string Password { get; set; } = null!;
+        public string ConfirmPassword { get; set; } = null!;
+    }
 }

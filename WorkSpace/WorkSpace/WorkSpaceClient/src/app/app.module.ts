@@ -5,10 +5,11 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './components/layout/layout.module';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -16,6 +17,13 @@ import { LayoutModule } from './components/layout/layout.module';
     NgbModule,
     SharedModule,
     LayoutModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('authToken');
+        },
+      }
+    })
     
   ],
   providers: [],
