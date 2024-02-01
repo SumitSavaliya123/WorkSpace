@@ -6,9 +6,15 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationLayoutComponent } from './authentication-layout/authentication-layout.component';
+import { CommonLayoutComponent } from './common-layout/common-layout.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 const components =[
-  AuthenticationLayoutComponent
+  AuthenticationLayoutComponent,
+  CommonLayoutComponent,
+  HeaderComponent,
+  FooterComponent
 ]
 
 @NgModule({

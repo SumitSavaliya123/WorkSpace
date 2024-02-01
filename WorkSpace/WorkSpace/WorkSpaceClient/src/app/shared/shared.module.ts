@@ -23,7 +23,7 @@ const components=[
     NgbModule,
     RouterModule,
     NgbTooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports:[...components,ReactiveFormsModule,FormsModule]
 })

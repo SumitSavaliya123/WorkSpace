@@ -6,6 +6,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './components/layout/layout.module';
 import { JwtModule } from '@auth0/angular-jwt';
+import { EmployeeModule } from './components/employee/employee.module';
+import { ManagerModule } from './components/manager/manager.module';
+import { ErrorComponentsModule } from './components/error-components/error-components.module';
+import { API_INTERCEPTOR } from './interceptors/api-response.interceptor';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,10 @@ import { JwtModule } from '@auth0/angular-jwt';
     NgbModule,
     SharedModule,
     LayoutModule,
+    EmployeeModule,
+    ManagerModule,
+    ErrorComponentsModule,
+    ToastrModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
@@ -26,7 +35,7 @@ import { JwtModule } from '@auth0/angular-jwt';
     })
     
   ],
-  providers: [],
+  providers: [API_INTERCEPTOR],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

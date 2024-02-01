@@ -43,8 +43,11 @@ export class VerifyOtpComponent implements OnInit {
           StorageHelperConstant.refreshToken,
           res.data.refreshToken
         );
-            if(this.authService.getUserRole() == UserRole.hrRoleId){
-                this.router.navigate([RoutingPathConstant.resetPassword]);
+            if(this.authService.getUserRole() == UserRole.managerRoleId){
+                this.router.navigate([RoutingPathConstant.managerDashboard]);
+            }
+            else{
+              this.router.navigate([RoutingPathConstant.employeeDashboard]);
             }
             console.log(res);
           },

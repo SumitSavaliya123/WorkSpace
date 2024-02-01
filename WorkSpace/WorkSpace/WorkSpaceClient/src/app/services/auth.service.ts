@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { StorageHelperConstant } from '../shared/storage-helper/storage-helper';
 import { StorageHelperService } from './storage-helper.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { RoutingPathConstant } from '../constants/routing/routing-path';
 
 
 @Injectable({
@@ -25,7 +26,6 @@ export class AuthService {
       ];
     const userId = decodedToken['UserId'];
 
-    const labId = decodedToken['LabId'];
     const userName =
       decodedToken[
         'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'
@@ -35,6 +35,14 @@ export class AuthService {
     this.storageHelper.setAsLocal(StorageHelperConstant.userRole, userRole);
     this.storageHelper.setAsLocal(StorageHelperConstant.userId, userId);
     this.storageHelper.setAsLocal(StorageHelperConstant.userName, userName);
+  }
+
+  isAuthenticate() {
+    if (this.getJwtToken() === null || this.getJwtToken() === "") {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   getJwtToken(){
@@ -64,6 +72,7 @@ export class AuthService {
     this.storageHelper.removeFromLocal(StorageHelperConstant.userId);
     this.storageHelper.removeFromLocal(StorageHelperConstant.userName);
     this.storageHelper.removeFromLocal(StorageHelperConstant.rememberMe);   
+    this.router.navigate([RoutingPathConstant.loginUrl]);
   }
 
 
