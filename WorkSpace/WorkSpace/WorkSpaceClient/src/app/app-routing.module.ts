@@ -12,12 +12,12 @@ const routes: Routes = [
     loadChildren: () => AuthenticationModule,
     //canActivate: [SigninGuard()],
   },
-  {
-    path: UserRole.employee,
-    loadChildren: () => EmployeeModule,
-    canActivate: [AuthGuard()],
-    data: { expectedRole: UserRole.employee },
-  },
+  // {
+  //   path: UserRole.employee,
+  //   loadChildren: () => EmployeeModule,
+  //   canActivate: [AuthGuard()],
+  //   data: { expectedRole: UserRole.employee },
+  // },
 ];
 
 @NgModule({

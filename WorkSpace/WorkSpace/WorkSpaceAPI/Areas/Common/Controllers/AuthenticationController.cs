@@ -68,5 +68,12 @@ namespace WorkSpaceAPI.Areas.Common.Controllers
             return ResponseHelper.SuccessResponse(null,MessageConstants.PasswordReset);
         }
 
+        [HttpPost("refresh-jwttoken")]
+        public async Task<IActionResult> RefreshToken(TokensDto tokensDto)
+        {
+            await _authenticationService.RefreshToken(tokensDto);
+            return ResponseHelper.SuccessResponse(null,String.Empty);
+        }
+
     }
 }

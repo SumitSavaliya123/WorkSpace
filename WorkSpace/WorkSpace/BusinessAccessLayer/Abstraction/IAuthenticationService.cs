@@ -14,5 +14,7 @@ namespace BusinessAccessLayer.Abstraction
         Task ForgotPassword(LoginEmailDto emailDto);
 
         Task ResetPassword(string password, string token);
+
+        Task<TokensDto> RefreshToken(TokensDto tokenDto);
     }
 }

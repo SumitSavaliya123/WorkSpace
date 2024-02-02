@@ -28,6 +28,12 @@ export function AuthGuard(): CanActivateFn {
         return false;
     }
 
+    if(userRole == UserRole.employeeRoleId && expectedRole !== UserRole.employee){
+      messageService.error(MessageConstant.unauthorize,MessageConstant.close);
+      router.navigate([RoutingPathConstant.unauthorizeUrl]);
+      return false;
+    }
+
     return true;
   }
 };

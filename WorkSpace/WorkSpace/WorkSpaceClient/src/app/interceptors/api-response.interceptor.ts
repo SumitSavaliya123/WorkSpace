@@ -7,13 +7,14 @@ import {
   HttpResponse,
   HTTP_INTERCEPTORS,
 } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { Observable, finalize, tap } from 'rxjs';
 import { MessageService } from '../shared/services/message.service';
 import { IResponse } from '../models/shared/response';
+import { LoaderService } from '../shared/services/loader.service';
 
 @Injectable()
 export class ApiResponseInterceptor implements HttpInterceptor {
-  constructor(private messageService: MessageService) {}
+  constructor(private messageService: MessageService, private loaderService : LoaderService) {}
 
   intercept(
     request: HttpRequest<unknown>,
@@ -21,6 +22,7 @@ export class ApiResponseInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
       tap((event: HttpEvent<any>) => {
+        this.loaderService.setLoader(true);
         if (
           event instanceof HttpResponse &&
           (request.method === 'POST' ||
@@ -34,8 +36,9 @@ export class ApiResponseInterceptor implements HttpInterceptor {
           const response : IResponse<null> = event.body;
           this.messageService.success(response.message);
         }
-      })
-    );
+      }),
+      finalize(() => this.loaderService.setLoader(false)) 
+      );
   }
 }
 

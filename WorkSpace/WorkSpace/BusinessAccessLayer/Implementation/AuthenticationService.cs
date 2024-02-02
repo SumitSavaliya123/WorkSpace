@@ -5,6 +5,7 @@ using Common.Utils;
 using DataAccessLayer.Abstraction;
 using Entities.DataModels;
 using Entities.DTOs.Request;
+using System.Security.Claims;
 
 namespace BusinessAccessLayer.Implementation
 {
@@ -112,6 +113,27 @@ namespace BusinessAccessLayer.Implementation
             user.Password = password;
             await _authenticationRepository.UpdateAsync(user);
             await _unitOfWork.SaveAsync();
+        }
+
+        public async Task<TokensDto> RefreshToken(TokensDto tokenDto)
+        {
+            ClaimsPrincipal principal =_jwtManageService.GetPrincipalFormExpiredToken(tokenDto.AccessToken);
+            string claimtype = ClaimTypes.Email;
+            var emailClaim = principal.FindFirst(claimtype);
+            var email = emailClaim?.Value?.Replace("mailto:", string.Empty);
+            UserRefreshTokens savedRefreshToken = await _authenticationRepository.GetUserRefreshTokens(email.ToString(), tokenDto.RefreshToken);
+            TokensDto newJwtToken = _jwtManageService.GenerateRefreshToken(await _authenticationRepository.GetUserByEmail(email.ToString()));
+            if (savedRefreshToken.RefreshToken != tokenDto.RefreshToken || newJwtToken == null) throw new ModelValidationException(MessageConstants.INVALID_ATTEMPT);
+
+            UserRefreshTokens userRefreshTokens = new()
+            {
+                RefreshToken = newJwtToken.RefreshToken,
+                Email = email.ToString(),
+            };
+            await _authenticationRepository.DeleteUserRefreshToken(email.ToString(), tokenDto.RefreshToken);
+            await _authenticationRepository.AddUserRefreshToken(userRefreshTokens);
+            await _unitOfWork.SaveAsync();
+            return newJwtToken;
         }
         #endregion
 

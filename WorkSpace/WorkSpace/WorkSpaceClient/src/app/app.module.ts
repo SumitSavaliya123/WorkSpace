@@ -11,6 +11,7 @@ import { ManagerModule } from './components/manager/manager.module';
 import { ErrorComponentsModule } from './components/error-components/error-components.module';
 import { API_INTERCEPTOR } from './interceptors/api-response.interceptor';
 import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
     EmployeeModule,
     ManagerModule,
     ErrorComponentsModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot(),
     JwtModule.forRoot({
       config: {

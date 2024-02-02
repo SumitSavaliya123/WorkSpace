@@ -7,5 +7,9 @@ namespace DataAccessLayer.Abstraction
         Task<User> GetUserByEmail(string email);
 
         Task<UserRefreshTokens> AddUserRefreshToken(UserRefreshTokens userRefreshTokens);
+
+        Task<UserRefreshTokens> GetUserRefreshTokens(string email, string refreshToken);
+
+        Task DeleteUserRefreshToken(string email, string refreshToken); 
     }
 }

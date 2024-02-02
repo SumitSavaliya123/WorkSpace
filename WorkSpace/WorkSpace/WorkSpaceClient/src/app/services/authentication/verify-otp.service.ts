@@ -36,7 +36,6 @@ export class VerifyOtpService {
   }
 
   resendOtp() {
-    debugger;
     let body = {
       email: this.storageHelper.getFromSession(StorageHelperConstant.email),
     };

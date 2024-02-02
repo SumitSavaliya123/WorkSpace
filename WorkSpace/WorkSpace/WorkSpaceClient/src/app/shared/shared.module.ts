@@ -7,11 +7,13 @@ import { NgbModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { ButtonComponent } from './components/button/button.component';
 import { InputComponent } from './components/input/input.component';
 import { TextareaComponent } from './components/textarea/textarea.component';
+import { LoaderComponent } from './components/loader/loader.component';
 const components=[
   AccordionComponent,
   ButtonComponent,
   InputComponent,
   TextareaComponent,
+  LoaderComponent
 ]
 
 @NgModule({

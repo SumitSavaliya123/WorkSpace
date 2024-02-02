@@ -5,6 +5,7 @@ import { StorageHelperConstant } from '../shared/storage-helper/storage-helper';
 import { StorageHelperService } from './storage-helper.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { RoutingPathConstant } from '../constants/routing/routing-path';
+import { ApiCallConstants } from '../constants/api-call/api';
 
 
 @Injectable({
@@ -75,5 +76,12 @@ export class AuthService {
     this.router.navigate([RoutingPathConstant.loginUrl]);
   }
 
+  refreshToken(){
+    let body={
+      accessToken : this.getJwtToken(),
+      refreshToken : this.getRefreshToken()
+    }
+    return this.http.post(ApiCallConstants.REFRESH_TOKEN_URL,body);
+  }
 
 }

@@ -7,6 +7,7 @@ import { IVerifyOtpInterface } from 'src/app/models/verify-otp.inerface';
 import { AuthService } from 'src/app/services/auth.service';
 import { VerifyOtpService } from 'src/app/services/authentication/verify-otp.service';
 import { StorageHelperService } from 'src/app/services/storage-helper.service';
+import { MessageService } from 'src/app/shared/services/message.service';
 import { StorageHelperConstant } from 'src/app/shared/storage-helper/storage-helper';
 
 @Component({
@@ -49,7 +50,6 @@ export class VerifyOtpComponent implements OnInit {
             else{
               this.router.navigate([RoutingPathConstant.employeeDashboard]);
             }
-            console.log(res);
           },
         });
     }
