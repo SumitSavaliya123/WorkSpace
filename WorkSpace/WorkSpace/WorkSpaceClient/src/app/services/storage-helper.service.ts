@@ -14,7 +14,7 @@ export class StorageHelperService {
   }
 
   setAsSession(name: string, storeString: string) {
-    localStorage.setItem(
+    sessionStorage.setItem(
       this.encodeString(name),
       this.encodeString(storeString)
     );
@@ -25,7 +25,7 @@ export class StorageHelperService {
   }
 
   getFromSession(name: string) {
-    return this.decodeString(localStorage.getItem(this.encodeString(name)));
+    return this.decodeString(sessionStorage.getItem(this.encodeString(name)));
   }
 
   removeFromLocal(name: string) {
@@ -33,7 +33,7 @@ export class StorageHelperService {
   }
 
   removeFromSession(name: string) {
-    localStorage.removeItem(this.encodeString(name));
+    sessionStorage.removeItem(this.encodeString(name));
   }
 
   encodeString(stringData: string) {

@@ -7,6 +7,14 @@ namespace BusinessAccessLayer.Abstraction
     {
         Task<string> Login(LoginDto loginDto);
 
+        Task SendOtp(long? id, string email, string typeOfOtp);
+
         Task<TokensDto> VerifyOtp(long? id, LoginOtpDto loginOtpDto, bool rememberMe);
+
+        Task ForgotPassword(LoginEmailDto emailDto);
+
+        Task ResetPassword(string password, string token);
+
+        Task<TokensDto> RefreshToken(TokensDto tokenDto);
     }
 }

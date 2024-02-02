@@ -37,7 +37,7 @@ namespace WorkSpaceAPI.Areas.Common.Controllers
                 SameSite = Microsoft.Net.Http.Headers.SameSiteMode.None // Set whether the cookie requires a secure connection (https)
             };
             Response.Headers[HeaderNames.SetCookie] = cookieHeaderValue.ToString();
-            return ResponseHelper.SuccessResponse(await _authenticationService.Login(loginDto), MessageConstants.GlobalSuccess);
+            return ResponseHelper.SuccessResponse(await _authenticationService.Login(loginDto), MessageConstants.MailSent);
         }
 
         [HttpPost("verify-otp")]
@@ -45,6 +45,34 @@ namespace WorkSpaceAPI.Areas.Common.Controllers
         {
             bool remeberMe = Request.Cookies[SystemConstants.RememeberMeCookieKey] is not null && Request.Cookies[SystemConstants.RememeberMeCookieKey] == SystemConstants.TrueString;
             return ResponseHelper.SuccessResponse(await _authenticationService.VerifyOtp(null,otpDto, remeberMe), MessageConstants.LoginSuccess);
+        }
+
+        [HttpPost("resend-otp")]
+        public async Task<IActionResult> ResendOtp(ResendOtpDto resendOtpDto )
+        {
+            await _authenticationService.SendOtp(null, resendOtpDto.Email, SystemConstants.AuthenticationOtp);
+            return ResponseHelper.SuccessResponse(null, MessageConstants.MailSent);
+        }
+
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword(LoginEmailDto emailDto)
+        {
+            await _authenticationService.ForgotPassword(emailDto);
+            return ResponseHelper.SuccessResponse(null,MessageConstants.MailSent);
+        }
+
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPasswordDto, string token)
+        {
+            await _authenticationService.ResetPassword(resetPasswordDto.Password,token);
+            return ResponseHelper.SuccessResponse(null,MessageConstants.PasswordReset);
+        }
+
+        [HttpPost("refresh-jwttoken")]
+        public async Task<IActionResult> RefreshToken(TokensDto tokensDto)
+        {
+            await _authenticationService.RefreshToken(tokensDto);
+            return ResponseHelper.SuccessResponse(null,String.Empty);
         }
 
     }

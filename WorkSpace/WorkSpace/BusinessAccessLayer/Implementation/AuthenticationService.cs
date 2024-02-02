@@ -5,6 +5,7 @@ using Common.Utils;
 using DataAccessLayer.Abstraction;
 using Entities.DataModels;
 using Entities.DTOs.Request;
+using System.Security.Claims;
 
 namespace BusinessAccessLayer.Implementation
 {
@@ -86,6 +87,61 @@ namespace BusinessAccessLayer.Implementation
             }
             return token;
         }
+
+        public async Task ForgotPassword(LoginEmailDto emailDto)
+        {
+            User user = await _authenticationRepository.GetUserByEmail(emailDto.Email);
+            if (user != null)
+            {
+                MailDto mailDto = new()
+                {
+                    ToEmail = emailDto.Email,
+                    Body = MailBodyUtil.SendResetPasswordLink("http://localhost:4200/reset-password?token=" + EncodingMailToken(emailDto.Email)),
+                    Subject = MailConstants.ResetPasswordSubject
+                };
+                await _mailService.SendMailAsync(mailDto);
+            }
+        }
+
+        public async Task ResetPassword(string password,string token)
+        {
+            if(string.IsNullOrEmpty(token)) throw new ModelValidationException(MessageConstants.INVALID_TOKEN);
+            DateTime dateTime = Convert.ToDateTime(DecodingMailToken(token).Split("&")[1]);
+            if (dateTime < DateTime.UtcNow) throw new ModelValidationException(MessageConstants.TOKEN_EXPIRE);
+
+            User user = await _authenticationRepository.GetUserByEmail(DecodingMailToken(token).Split("&")[0]);
+            user.Password = password;
+            await _authenticationRepository.UpdateAsync(user);
+            await _unitOfWork.SaveAsync();
+        }
+
+        public async Task<TokensDto> RefreshToken(TokensDto tokenDto)
+        {
+            ClaimsPrincipal principal =_jwtManageService.GetPrincipalFormExpiredToken(tokenDto.AccessToken);
+            string claimtype = ClaimTypes.Email;
+            var emailClaim = principal.FindFirst(claimtype);
+            var email = emailClaim?.Value?.Replace("mailto:", string.Empty);
+            UserRefreshTokens savedRefreshToken = await _authenticationRepository.GetUserRefreshTokens(email.ToString(), tokenDto.RefreshToken);
+            TokensDto newJwtToken = _jwtManageService.GenerateRefreshToken(await _authenticationRepository.GetUserByEmail(email.ToString()));
+            if (savedRefreshToken.RefreshToken != tokenDto.RefreshToken || newJwtToken == null) throw new ModelValidationException(MessageConstants.INVALID_ATTEMPT);
+
+            UserRefreshTokens userRefreshTokens = new()
+            {
+                RefreshToken = newJwtToken.RefreshToken,
+                Email = email.ToString(),
+            };
+            await _authenticationRepository.DeleteUserRefreshToken(email.ToString(), tokenDto.RefreshToken);
+            await _authenticationRepository.AddUserRefreshToken(userRefreshTokens);
+            await _unitOfWork.SaveAsync();
+            return newJwtToken;
+        }
         #endregion
+
+
+        #region HelperMethod
+
+        public static string EncodingMailToken(string email) => System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(email + "&" + DateTime.UtcNow.AddMinutes(10)));
+        public static string DecodingMailToken(string token) => System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(token));
+        #endregion HelperMethod
     }
 }

@@ -81,6 +81,29 @@ namespace BusinessAccessLayer.Implementation
             return Convert.ToBase64String(randomNumber);
         }
 
+        public ClaimsPrincipal GetPrincipalFormExpiredToken(string token)
+        {
+            var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
+            var tokenValidatorParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                ValidateLifetime = false,
+                ValidateIssuerSigningKey = false,
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ClockSkew = TimeSpan.Zero,
+            };
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var principal = tokenHandler.ValidateToken(token, tokenValidatorParameters, out SecurityToken securityToken);
+
+            JwtSecurityToken jwtSecurityToken = securityToken as JwtSecurityToken;
+            if (jwtSecurityToken == null || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+            {
+                throw new SecurityTokenException(MessageConstants.INVALID_TOKEN);
+            }
+            return principal;
+        }
+
         #endregion
     }
 }

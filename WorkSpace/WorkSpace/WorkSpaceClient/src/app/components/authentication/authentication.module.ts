@@ -7,6 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
     CommonModule,
     AuthenticationRoutingModule,
     SharedModule
-  ]
+  ],
+  providers:[]
 })
 export class AuthenticationModule { }

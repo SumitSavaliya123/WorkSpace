@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRouteSnapshot } from '@angular/router';
 import { RoutingPathConstant } from 'src/app/constants/routing/routing-path';
 import { ValidationMessageConstant } from 'src/app/constants/validation/validation-message';
 import { ValidationPattern } from 'src/app/constants/validation/validation-pattern';
@@ -23,16 +24,16 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(private _loginService:LoginService){
+    // console.log(next);
 
   }
 
-  ngOnInit(): void {
-    
+  ngOnInit(){
   }
 
   onSubmit(){
     this.loginForm.markAllAsTouched();
-    if(!this.loginForm.invalid)
+    if(this.loginForm.valid)
     this._loginService.login(<ILoginInterface>this.loginForm.value)
   }
 
