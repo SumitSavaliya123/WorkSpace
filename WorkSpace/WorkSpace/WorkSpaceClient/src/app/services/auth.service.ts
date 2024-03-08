@@ -6,18 +6,22 @@ import { StorageHelperService } from './storage-helper.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { RoutingPathConstant } from '../constants/routing/routing-path';
 import { ApiCallConstants } from '../constants/api-call/api';
+import { Subject } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class AuthService {
+  
   constructor(
     private router: Router,
     private jwtService: JwtHelperService,
     private http: HttpClient,
-    private storageHelper: StorageHelperService
-  ) {}
+    private storageHelper: StorageHelperService,
+  ) {
+  }
 
   decodeToken(token: string) {
     const decodedToken = this.jwtService.decodeToken(token);
@@ -83,5 +87,4 @@ export class AuthService {
     }
     return this.http.post(ApiCallConstants.REFRESH_TOKEN_URL,body);
   }
-
 }

@@ -7,6 +7,8 @@ namespace BusinessAccessLayer.Abstraction
     {
         Task<string> Login(LoginDto loginDto);
 
+        Task<string> SocialMediaLogin(string email);
+
         Task SendOtp(long? id, string email, string typeOfOtp);
 
         Task<TokensDto> VerifyOtp(long? id, LoginOtpDto loginOtpDto, bool rememberMe);

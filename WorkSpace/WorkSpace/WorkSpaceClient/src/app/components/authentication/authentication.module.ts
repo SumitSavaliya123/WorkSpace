@@ -8,6 +8,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
-    SharedModule
+    SharedModule,
+    GoogleSigninButtonModule
   ],
   providers:[]
 })
