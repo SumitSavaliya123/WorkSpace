@@ -39,6 +39,14 @@ namespace BusinessAccessLayer.Implementation
             return user.FirstName;
         }
 
+        public async Task<string> SocialMediaLogin(string email)
+        {
+            User? user = await _authenticationRepository.GetFirstOrDefaultAsync(user => user.Email == email);
+            if (user == null) throw new ModelValidationException(MessageConstants.InvalidLoginCredential);
+            await SendOtp(null, email, SystemConstants.AuthenticationOtp);
+            return user.FirstName;
+        }
+
         public async Task SendOtp(long? id, string email, string typeOfOtp)
         {
             User user = id.HasValue ? await _authenticationRepository.GetByIdAsync(id.Value) : await _authenticationRepository.GetUserByEmail(email);

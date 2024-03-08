@@ -40,6 +40,12 @@ namespace WorkSpaceAPI.Areas.Common.Controllers
             return ResponseHelper.SuccessResponse(await _authenticationService.Login(loginDto), MessageConstants.MailSent);
         }
 
+        [HttpPost("socialMediaLogin")]
+        public async Task<IActionResult> SocialMediaLogin([FromBody] string email)
+        {
+            return ResponseHelper.SuccessResponse(await _authenticationService.SocialMediaLogin(email), MessageConstants.MailSent);
+        }
+
         [HttpPost("verify-otp")]
         public async Task<IActionResult> VerifyOtp(LoginOtpDto otpDto)
         {

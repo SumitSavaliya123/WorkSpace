@@ -12,6 +12,8 @@ import { ErrorComponentsModule } from './components/error-components/error-compo
 import { API_INTERCEPTOR } from './interceptors/api-response.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SocialLoginModule, SocialAuthServiceConfig, GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ManagerModule,
     ErrorComponentsModule,
     BrowserAnimationsModule,
+    SocialLoginModule,
+    GoogleSigninButtonModule,
     ToastrModule.forRoot(),
     JwtModule.forRoot({
       config: {
@@ -37,7 +41,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     })
     
   ],
-  providers: [API_INTERCEPTOR],
+  providers: [API_INTERCEPTOR,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              // replace this with your google client id			
+              '1003570688319-56j75ovshb819i33k9g16kj804q4esu4.apps.googleusercontent.com'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
