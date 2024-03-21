@@ -14,6 +14,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SocialLoginModule, SocialAuthServiceConfig, GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
     BrowserAnimationsModule,
     SocialLoginModule,
     GoogleSigninButtonModule,
+    GoogleMapsModule,
     ToastrModule.forRoot(),
     JwtModule.forRoot({
       config: {

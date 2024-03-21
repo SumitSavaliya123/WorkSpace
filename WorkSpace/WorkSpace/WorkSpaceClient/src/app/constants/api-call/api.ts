@@ -14,5 +14,6 @@ export class ApiCallConstants{
      public static readonly FORGOT_PASSWORD_URL = this.AREA_AUTHENTICATION + '/forgot-password';
      public static readonly RESET_PASSWORD_URL = this.AREA_AUTHENTICATION + '/reset-password';
      public static readonly REFRESH_TOKEN_URL = this.AREA_AUTHENTICATION + '/refresh-jwttoken';
-
+     public static readonly GET_USER =this.AREA_AUTHENTICATION + '/getuser';
+     public static readonly REGISTER_URL = this.AREA_AUTHENTICATION + '/registeruser';
 }

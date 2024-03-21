@@ -1,13 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "bu74zMNFOpWAawJWZEITjNYQVJfB8Sm83WHKqRHWI9uVfFZ4wZUCqtftcuDVTTQEHOTUSSYz+GExYvqk2u8Xnw==",
+  "dgSpecHash": "AL8u0849UdFiC5D89sIkI7ZRsI0J165jre4324ui9RQHabo5u/cshODbFdXr0/QQgclbvgrjL/xr3AasK63tPA==",
   "success": true,
   "projectFilePath": "D:\\WorkSpace\\WorkSpace\\WorkSpace\\WorkSpaceClient\\WorkSpaceClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tatva\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\tatva\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
+    "C:\\Users\\tatva\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.27\\microsoft.aspnetcore.jsonpatch.6.0.27.nupkg.sha512",
+    "C:\\Users\\tatva\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.27\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.27.nupkg.sha512",
+    "C:\\Users\\tatva\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\tatva\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
-    "C:\\Users\\tatva\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\tatva\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\tatva\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\tatva\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\tatva\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\tatva\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512"
   ],
   "logs": []
 }

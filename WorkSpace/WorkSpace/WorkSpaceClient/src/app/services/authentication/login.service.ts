@@ -25,8 +25,7 @@ export class LoginService {
         headers: {
           credentials: 'include',
         },
-      })
-      
+      })  
   }
 
   socialMediaLogin(email:string){

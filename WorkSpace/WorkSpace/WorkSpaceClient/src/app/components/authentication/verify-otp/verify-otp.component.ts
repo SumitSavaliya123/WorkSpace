@@ -7,7 +7,6 @@ import { IVerifyOtpInterface } from 'src/app/models/verify-otp.inerface';
 import { AuthService } from 'src/app/services/auth.service';
 import { VerifyOtpService } from 'src/app/services/authentication/verify-otp.service';
 import { StorageHelperService } from 'src/app/services/storage-helper.service';
-import { MessageService } from 'src/app/shared/services/message.service';
 import { StorageHelperConstant } from 'src/app/shared/storage-helper/storage-helper';
 
 @Component({
@@ -30,7 +29,9 @@ export class VerifyOtpComponent implements OnInit {
 
   constructor(private service: VerifyOtpService,private authService:AuthService,private router:Router, private storageHelper:StorageHelperService, private injector: Injector) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.getUser();
+   }
 
   onSubmit() {
     this.verifyOtpForm.markAllAsTouched();
@@ -40,7 +41,7 @@ export class VerifyOtpComponent implements OnInit {
         .subscribe({
           next: (res: any) => {
             this.authService.decodeToken(res.data.accessToken);
-        this.storageHelper.setAsLocal(
+            this.storageHelper.setAsLocal(
           StorageHelperConstant.refreshToken,
           res.data.refreshToken
         );
@@ -53,6 +54,10 @@ export class VerifyOtpComponent implements OnInit {
           },
         });
     }
+  }
+
+  getUser(){
+    this.userName = this.authService.getUserName();
   }
 
   resendOtp() {

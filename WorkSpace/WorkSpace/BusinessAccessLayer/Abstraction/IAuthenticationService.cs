@@ -1,10 +1,12 @@
-﻿using Entities.DTOs.Request;
+﻿using Entities.DataModels;
+using Entities.DTOs.Request;
 
 namespace BusinessAccessLayer.Abstraction
 
 {
     public interface IAuthenticationService
     {
+        Task<string> RegisterUser(RegisterDto registerDto);
         Task<string> Login(LoginDto loginDto);
 
         Task<string> SocialMediaLogin(string email);

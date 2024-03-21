@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 export class VerifyOtpService {
   verifyOtpApi = ApiCallConstants.VERIFY_OTP_URL;
   resendOtpApi = ApiCallConstants.RESEND_OTP_URL;
+  getUserApi = ApiCallConstants.GET_USER;
 
   constructor(
     private router: Router,
@@ -33,6 +34,10 @@ export class VerifyOtpService {
         credentials: 'include',
       },
     });
+  }
+
+  getUser(){
+     return this.http.get(this.getUserApi);
   }
 
   resendOtp() {

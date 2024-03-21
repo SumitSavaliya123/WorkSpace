@@ -65,7 +65,6 @@ namespace DataAccessLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasMaxLength(512)
                         .HasColumnType("varchar")
                         .HasColumnName("address");
@@ -126,12 +125,11 @@ namespace DataAccessLayer.Migrations
                         .HasColumnName("password");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasMaxLength(13)
                         .HasColumnType("varchar")
                         .HasColumnName("phone_number");
 
-                    b.Property<byte>("Role")
+                    b.Property<byte?>("Role")
                         .HasColumnType("tinyint")
                         .HasColumnName("role");
 

@@ -24,17 +24,17 @@ namespace Entities.DataModels
 
         [StringLength(13)]
         [Column("phone_number", TypeName = "varchar")]
-        public string PhoneNumber { get; set; } = null!;
+        public string? PhoneNumber { get; set; } = null!;
 
         [StringLength(512)]
         [Column("address", TypeName = "varchar")]
-        public string Address { get; set; } = null!;
+        public string? Address { get; set; } = null!;
 
         [Column("dob")]
         public DateTimeOffset? DOB { get; set; }
 
         [Column("role")]
-        public byte Role { get; set; }
+        public byte? Role { get; set; }
 
         [Column("gender")]
         public byte? Gender { get; set; }

@@ -40,7 +40,7 @@ public static class ApplicationConfiguration
         services.AddCors(options =>
         {
             options.AddPolicy(SystemConstants.CorsPolicy,
-                builder => builder.WithOrigins("http://localhost:4200")
+                builder => builder.WithOrigins("http://localhost:4200", "http://localhost:60561")
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials());

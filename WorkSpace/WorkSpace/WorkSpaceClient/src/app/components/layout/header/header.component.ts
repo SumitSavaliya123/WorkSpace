@@ -1,4 +1,4 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { RoutingPathConstant } from 'src/app/constants/routing/routing-path';
 
@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.scss'],
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   userRole: string | null = '3';
   routingUrl!: string;
   links!: Array<{ text: string; icon: string; route: string }>;
@@ -29,6 +29,9 @@ export class HeaderComponent {
 
   }
 
+  ngOnInit(): void {
+    this.userName = this.authService.getUserName();
+  }
   setActiveLink(index: number) {
     this.activeLinkIndex = index;
   }

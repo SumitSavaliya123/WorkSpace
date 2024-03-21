@@ -13,6 +13,8 @@ namespace Common.Constants
 
         public const string GlobalCreated = "Resource created successfully.";
 
+        public const string UserCreated = "User registered successfully.";
+
         public static readonly string InvalidLoginCredential = "Invalid email/username or password.";
 
         public static readonly string LoginSuccess = "You are logged in !!";
@@ -35,6 +37,12 @@ namespace Common.Constants
         public const string TOKEN_EXPIRE = "Your session has been expired!";
 
         public const string INVALID_TOKEN = "Invalid Token!";
+
+        public const string GlobalError = "Error";
+
+        public const string UserExists = "User already exists, please try with another email.";
+
+
         #endregion
 
 

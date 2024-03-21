@@ -6,7 +6,6 @@ D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\obj\Debug\net6.0\BusinessAc
 D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\bin\Debug\net6.0\BusinessAccessLayer.deps.json
 D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\bin\Debug\net6.0\BusinessAccessLayer.runtimeconfig.json
 D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\bin\Debug\net6.0\BusinessAccessLayer.dll
-D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\bin\Debug\net6.0\ref\BusinessAccessLayer.dll
 D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\bin\Debug\net6.0\BusinessAccessLayer.pdb
 D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\bin\Debug\net6.0\Common.dll
 D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
@@ -14,8 +13,10 @@ D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\bin\Debug\net6.0\Entities.d
 D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
 D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\bin\Debug\net6.0\Common.pdb
 D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\bin\Debug\net6.0\Entities.pdb
-D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.csproj.CopyComplete
 D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.dll
 D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\obj\Debug\net6.0\ref\BusinessAccessLayer.dll
 D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.pdb
 D:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.genruntimeconfig.cache
+d:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\obj\Debug\net6.0\BusinessAccessLayer.sourcelink.json
+d:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\obj\Debug\net6.0\Business.395A7FC9.Up2Date
+d:\WorkSpace\WorkSpace\WorkSpace\BusinessAccessLayer\obj\Debug\net6.0\refint\BusinessAccessLayer.dll
