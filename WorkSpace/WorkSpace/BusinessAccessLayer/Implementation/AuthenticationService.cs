@@ -31,12 +31,33 @@ namespace BusinessAccessLayer.Implementation
 
         #region Methods
 
+        public async Task<string> RegisterUser(RegisterDto registerDto)
+        {
+            User? user = await _authenticationRepository.GetFirstOrDefaultAsync(user => user.Email == registerDto.Email);
+            if (user != null)
+            {
+                throw new ResourceNotFoundException(MessageConstants.EmailAlreadyExists);
+            }
+
+            User user1 = new()
+            {
+                FirstName = registerDto.FirstName,
+                LastName = registerDto.LastName,
+                Email = registerDto.Email,
+                Password = registerDto.Password,
+            };
+            await _authenticationRepository.AddAsync(user1);
+            await _unitOfWork.SaveAsync();
+
+            return user1.FirstName + ' ' + user1.LastName;
+
+        }
         public async Task<string> Login(LoginDto loginDto)
         {
             User? user = await _authenticationRepository.GetFirstOrDefaultAsync(user => user.Email == loginDto.Email && user.Password == loginDto.Password);
             if (user == null) throw new ModelValidationException(MessageConstants.InvalidLoginCredential);
             await SendOtp(null, user.Email, SystemConstants.AuthenticationOtp);
-            return user.FirstName;
+            return user.FirstName + ' ' + user.LastName;
         }
 
         public async Task<string> SocialMediaLogin(string email)
@@ -44,13 +65,13 @@ namespace BusinessAccessLayer.Implementation
             User? user = await _authenticationRepository.GetFirstOrDefaultAsync(user => user.Email == email);
             if (user == null) throw new ModelValidationException(MessageConstants.InvalidLoginCredential);
             await SendOtp(null, email, SystemConstants.AuthenticationOtp);
-            return user.FirstName;
+            return user.FirstName + ' ' + user.LastName;
         }
 
         public async Task SendOtp(long? id, string email, string typeOfOtp)
         {
             User user = id.HasValue ? await _authenticationRepository.GetByIdAsync(id.Value) : await _authenticationRepository.GetUserByEmail(email);
-            if(id.HasValue) throw new ModelValidationException(MessageConstants.EmailAlreadyExists);
+            if (id.HasValue) throw new ModelValidationException(MessageConstants.EmailAlreadyExists);
 
             Random generator = new();
             user.OTP = generator.Next(100000, 999999).ToString();
@@ -111,9 +132,9 @@ namespace BusinessAccessLayer.Implementation
             }
         }
 
-        public async Task ResetPassword(string password,string token)
+        public async Task ResetPassword(string password, string token)
         {
-            if(string.IsNullOrEmpty(token)) throw new ModelValidationException(MessageConstants.INVALID_TOKEN);
+            if (string.IsNullOrEmpty(token)) throw new ModelValidationException(MessageConstants.INVALID_TOKEN);
             DateTime dateTime = Convert.ToDateTime(DecodingMailToken(token).Split("&")[1]);
             if (dateTime < DateTime.UtcNow) throw new ModelValidationException(MessageConstants.TOKEN_EXPIRE);
 
@@ -125,7 +146,7 @@ namespace BusinessAccessLayer.Implementation
 
         public async Task<TokensDto> RefreshToken(TokensDto tokenDto)
         {
-            ClaimsPrincipal principal =_jwtManageService.GetPrincipalFormExpiredToken(tokenDto.AccessToken);
+            ClaimsPrincipal principal = _jwtManageService.GetPrincipalFormExpiredToken(tokenDto.AccessToken);
             string claimtype = ClaimTypes.Email;
             var emailClaim = principal.FindFirst(claimtype);
             var email = emailClaim?.Value?.Replace("mailto:", string.Empty);

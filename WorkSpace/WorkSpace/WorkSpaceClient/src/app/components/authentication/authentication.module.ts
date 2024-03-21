@@ -9,6 +9,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
     ForgotPasswordComponent,
     ResetPasswordComponent,
     VerifyOtpComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,

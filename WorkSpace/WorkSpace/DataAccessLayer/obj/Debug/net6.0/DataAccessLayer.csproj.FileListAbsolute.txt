@@ -6,14 +6,15 @@ D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\obj\Debug\net6.0\DataAccessLaye
 D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
 D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.runtimeconfig.json
 D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
-D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\bin\Debug\net6.0\ref\DataAccessLayer.dll
 D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
 D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\bin\Debug\net6.0\Common.dll
 D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\bin\Debug\net6.0\Entities.dll
 D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\bin\Debug\net6.0\Entities.pdb
 D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\bin\Debug\net6.0\Common.pdb
-D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
 D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
 D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
 D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
 D:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.genruntimeconfig.cache
+d:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.sourcelink.json
+d:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\obj\Debug\net6.0\DataAcce.E67BD773.Up2Date
+d:\WorkSpace\WorkSpace\WorkSpace\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll

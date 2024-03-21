@@ -29,5 +29,17 @@ namespace WorkSpaceAPI.Helpers
             };
             return new ObjectResult(response);
         }
+
+        public static IActionResult ErrorResponse(object? data, string message = MessageConstants.GlobalError)
+        {
+            ApiResponse response = new()
+            {
+                StatusCode = StatusCodes.Status200OK,
+                Message = message,
+                Data = data,
+                Success = true
+            };
+            return new ObjectResult(response);
+        }
     }
 }

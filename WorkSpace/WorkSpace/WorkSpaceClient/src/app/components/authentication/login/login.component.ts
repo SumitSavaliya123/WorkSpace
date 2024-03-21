@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   emailValidationMsg : string = ValidationMessageConstant.email;
   passwordValidationMsg : string =ValidationMessageConstant.password;
   forgotPasswordUrl:string = RoutingPathConstant.forgotPasswordUrl;
+  registerUrl:string = RoutingPathConstant.registerUrl;
 
   loginForm = new FormGroup({
     email : new FormControl('',Validators.compose([Validators.required,Validators.pattern(ValidationPattern.email)])),
@@ -40,6 +41,9 @@ export class LoginComponent implements OnInit {
       next: (res: any) => {
         if(res.success){
           this.storageHelper.setAsSession(StorageHelperConstant.email, String(this.loginForm.value.email));
+          this.storageHelper.setAsLocal(StorageHelperConstant.userName,res.data);
+          console.log(res.data);
+          
           this.router.navigate([RoutingPathConstant.verifyOtpUrl]);
         }   
       },
@@ -57,6 +61,7 @@ export class LoginComponent implements OnInit {
           if(response.success){
             this.router.navigate([RoutingPathConstant.verifyOtpUrl]);
             this.storageHelper.setAsSession(StorageHelperConstant.email,userfromGoogle.email);
+            this.storageHelper.setAsLocal(StorageHelperConstant.userName,response.data);
           }
         }
       )

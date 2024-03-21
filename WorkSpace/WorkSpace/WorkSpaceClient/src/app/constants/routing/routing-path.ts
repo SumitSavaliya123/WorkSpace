@@ -1,5 +1,8 @@
 export class RoutingPathConstant {
  //authentication routing path
+  public static register = 'register';
+  public static registerUrl = '/register';
+
   public static login = 'login';
   public static loginUrl = '/login';
 

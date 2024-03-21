@@ -1,5 +1,6 @@
 ﻿using BusinessAccessLayer.Abstraction;
 using Common.Constants;
+using Entities.DataModels;
 using Entities.DTOs.Request;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -24,6 +25,17 @@ namespace WorkSpaceAPI.Areas.Common.Controllers
             _authenticationService = authenticationService;
         }
         #endregion
+
+        [HttpPost("registerUser")]
+        public async Task<IActionResult> RegisterUser(RegisterDto registerDto)
+        {
+            var result = await _authenticationService.RegisterUser(registerDto);
+            if(result != null || !String.IsNullOrEmpty(result))
+            {
+            return ResponseHelper.CreateResourceResponse(result, MessageConstants.UserCreated);
+            }
+            return ResponseHelper.ErrorResponse(default!,MessageConstants.UserExists);
+        }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto loginDto)

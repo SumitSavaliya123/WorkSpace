@@ -1,0 +1,69 @@
+<div class="login-box">
+  <h2 class="theme-color text-center">Sign Up</h2>
+  <form
+    action=""
+    class="d-flex flex-column"
+    [formGroup]="registerForm"
+    (submit)="onSubmit()"
+  >
+    <app-input
+      class="py-3"
+      title="First Name"
+      type="text"
+      className="rounded-pill px-4 py-2 fs-6"
+      placeholder="First Name"
+      [parentForm]="registerForm"
+      controlName="firstName"
+    ></app-input>
+
+    <app-input
+      class="py-3"
+      title="Last Name"
+      type="text"
+      className="rounded-pill px-4 py-2 fs-6"
+      placeholder="Last Name"
+      [parentForm]="registerForm"
+      controlName="lastName"
+    ></app-input>
+
+    <app-input
+      class="py-3"
+      title="Email"
+      type="email"
+      className="rounded-pill px-4 py-2 fs-6"
+      placeholder="Email Address"
+      [parentForm]="registerForm"
+      controlName="email"
+      [validationMsg]="emailValidationMsg"
+    ></app-input>
+
+    <app-input
+      class="py-3"
+      title="Password"
+      type="password"
+      className="rounded-pill px-4 py-2 fs-6"
+      placeholder="Password"
+      [parentForm]="registerForm"
+      controlName="password"
+      [validationMsg]="passwordValidationMsg"
+    ></app-input>
+
+    <app-input
+      class="py-3"
+      title="Repeat Password"
+      type="password"
+      className="rounded-pill px-4 py-2 fs-6"
+      placeholder="Repeat Password"
+      [parentForm]="registerForm"
+      controlName="repeatPassword"
+    ></app-input>
+
+    <app-button
+      type="submit"
+      label="Register"
+      iconClass="bi bi-arrow-right"
+      className="btn text-white rounded-pill my-3 px-4 submit-btn d-flex flex-row-reverse justify-content-between w-100 fs-6"
+      title="Submit"
+    ></app-button>
+  </form>
+</div>

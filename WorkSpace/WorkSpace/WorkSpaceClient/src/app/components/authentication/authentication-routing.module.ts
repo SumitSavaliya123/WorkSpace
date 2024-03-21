@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,11 @@ const routes: Routes = [
             path: RoutingPathConstant.forgotPassword,
             component: ForgotPasswordComponent
         },
+        {
+            path: RoutingPathConstant.register,
+            component: RegisterComponent
+
+        }
         // {
         //     path: "",
         //     redirectTo: RoutingPathConstant.loginUrl,

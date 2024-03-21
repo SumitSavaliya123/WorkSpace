@@ -54,7 +54,17 @@
       ></app-button>
 
       <hr>
-      <asl-google-signin-button type='icon' size='large'></asl-google-signin-button>
+      <div class=" d-flex align-items-center justify-content-between">
+        <asl-google-signin-button type='icon' size='large'></asl-google-signin-button>
+        
+        <span class="cursor-pointer"
+        ><a
+          [routerLink]="registerUrl"
+          class="text-decoration-none theme-color"
+          >Sign Up?</a
+        ></span
+      >
+      </div>
     </form>
   </div>
   
